@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PackageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "Create Package" do
+    parcel Parcel.create(length: 2)
+   end
 end

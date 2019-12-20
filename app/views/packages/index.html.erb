@@ -1,0 +1,32 @@
+<h1> Package Reports </h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Carrier</th>
+      <th scope="col">Width</th>
+      <th scope="col">Height</th>
+      <th scope="col">length</th>
+      <th scope="col">Total Weight</th>
+      <th scope="col">Fedex</th>
+    </tr>
+  </thead>
+  </tr>
+  <% @packages.each do |package| %>
+    <tr>
+        <td><%= package.tracking_number %></td>
+        <td><%= package.carrier %></td>
+        <td><%= package.parcel.width %> <%= package.parcel.distance_unit %></td>
+        <td><%= package.parcel.height %> <%= package.parcel.distance_unit %></td>
+        <td><%= package.parcel.length %> <%= package.parcel.distance_unit %></td>
+        <td><%= package.parcel.total_weight %> <%= package.parcel.mass_unit %></td>
+        <td> <% if package.parcel.has_overweight? %> 
+                <span class="badge badge-warning">Over Weight </span>
+            <% end %> 
+        </td>
+  </tr>
+  <%end%> 
+</table>
+
+

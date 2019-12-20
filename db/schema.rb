@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_030634) do
   enable_extension "plpgsql"
 
   create_table "packages", force: :cascade do |t|
-    t.string "name", limit: 20
-    t.string "carrier"
+    t.string "tracking_number", limit: 20, null: false
+    t.string "carrier", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
